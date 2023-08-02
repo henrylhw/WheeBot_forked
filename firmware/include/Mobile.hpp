@@ -2,27 +2,35 @@
 
 class Motor {
  protected:
-  int pwmPin1;
-  int pwmPin2;
+  int Pin1;
+  int Pin2;
+  int pwmPin;
   int pwmValue;
 
  public:
-  Motor(int pwmPin1, int pwmPin2) : pwmPin1(pwmPin1), pwmPin2(pwmPin2) {
+  Motor(int Pin1, int Pin2, int pwmPin) : Pin1(Pin1), Pin2(Pin2), pwmPin(pwmPin) {
     update(0);
   }
 
   void update(int pwmValue) {
     if (pwmValue > 0) {
-      analogWrite(pwmPin1, pwmValue);
-      analogWrite(pwmPin2, 0);
+      digitalWrite(Pin1, HIGH);
+      digitalWrite(Pin2, LOW);
+      analogWrite(pwmPin, pwmValue);
+      // analogWrite(Pin1, pwmValue);
+      // analogWrite(Pin2, 0);
       this->pwmValue = pwmValue;
     } else if (pwmValue < 0) {
-      analogWrite(pwmPin1, 0);
-      analogWrite(pwmPin2, -pwmValue);
+      // analogWrite(Pin1, 0);
+      // analogWrite(Pin2, -pwmValue);
+      digitalWrite(Pin1, LOW);
+      digitalWrite(Pin2, HIGH);
+      analogWrite(pwmPin, pwmValue);
       this->pwmValue = pwmValue;
     } else {  // Motor brake
-      analogWrite(pwmPin1, 10);
-      analogWrite(pwmPin2, 10);
+      digitalWrite(Pin1, LOW);
+      digitalWrite(Pin2, HIGH);
+      analogWrite(pwmPin, 0);
       this->pwmValue = 0;
     }
   }

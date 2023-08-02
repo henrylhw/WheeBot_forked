@@ -3,8 +3,8 @@
 #include "Config.hpp"
 #include "Mobile.hpp"
 //
-Motor motorLeft(MOTOR_LEFT_GPIO_PIN1, MOTOR_LEFT_GPIO_PIN2);
-Motor motorRight(MOTOR_RIGHT_GPIO_PIN1, MOTOR_RIGHT_GPIO_PIN2);
+Motor motorLeft(MOTOR_LEFT_GPIO_PIN1, MOTOR_LEFT_GPIO_PIN2, MOTOR_LEFT_PWM_PIN);
+Motor motorRight(MOTOR_RIGHT_GPIO_PIN1, MOTOR_RIGHT_GPIO_PIN2, MOTOR_RIGHT_PWM_PIN);
 Mobile mobile(motorRight, motorLeft);
 
 #if HAS_SPEED_SENSOR
