@@ -9,6 +9,9 @@ class Motor {
  public:
   Motor(int pwmPin1, int pwmPin2) : pwmPin1(pwmPin1), pwmPin2(pwmPin2) {
     update(0);
+    pinMode(Pin1,OUTPUT);
+    pinMode(Pin2,OUTPUT);
+    pinMode(pwmPin,OUTPUT);
   }
 
   void update(int pwmValue) {
