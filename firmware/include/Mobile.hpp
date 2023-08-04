@@ -28,7 +28,7 @@ class Motor {
       // analogWrite(Pin2, -pwmValue);
       digitalWrite(Pin1, LOW);
       digitalWrite(Pin2, HIGH);
-      analogWrite(pwmPin, pwmValue);
+      analogWrite(pwmPin, -pwmValue);
       this->pwmValue = pwmValue;
     } else {  // Motor brake
       digitalWrite(Pin1, LOW);
