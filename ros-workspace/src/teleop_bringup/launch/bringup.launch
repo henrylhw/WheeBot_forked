@@ -1,0 +1,15 @@
+<launch>
+    <node pkg="rosserial_python"
+        name="rosserial_node"
+        type="serial_node.py" output="screen">
+        <rosparam>port: /dev/ttyTHS1</rosparam>
+        <rosparam>baud: 38400</rosparam>
+    </node>
+
+    <node pkg="teleop_twist_keyboard"
+        name="teleop_node"
+        type="teleop_twist_keyboard.py" 
+        output="screen">
+    </node>
+
+</launch>
