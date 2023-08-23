@@ -8,6 +8,7 @@
     <node pkg="rosserial_python"
         name="rosserial_node"
         type="serial_node.py" output="screen">
+        <!-- rosparam>port: /dev/rfcomm1</rosparam> -->
         <rosparam>port: /dev/ttyTHS1</rosparam>
         <rosparam>baud: 38400</rosparam>
     </node>
